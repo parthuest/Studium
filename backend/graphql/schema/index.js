@@ -3,33 +3,33 @@ const { buildSchema } = require("graphql");
 module.exports = buildSchema(`
 type Url {
     id: ID!
-    name: String
-    url: String
+    name: String!
+    url: String!
     visitCounter: Int
-    parent: Group
+    parent: Group!
 }
 type Group {
     id: ID!
-    name: String
-    url: String
+    name: String!
+    url: String!
     visitCounter: Int
     childUrls: [Url]
 }
 input UrlInput {
-    name: String
-    url: String
-    parent: ID
+    name: String!
+    url: String!
+    parent: ID!
 }
 input GroupInput {
-    name: String
-    url: String
+    name: String!
+    url: String!
 }
 input IncGroupInput {
-    id: ID
+    id: ID!
 }
 input AddUrlInGroupInput {
-    groupId: ID
-    urlId: ID
+    groupId: ID!
+    urlId: ID!
 }
 
 type RootQuery {
