@@ -17,7 +17,6 @@ const GroupSchema = new Schema({
     childUrls: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Url',
-        // required: [true, "URL Id is required"]
     }],
 });
 

@@ -1,6 +1,6 @@
-const Url = require("../../models/url");
+// const Url = require("../../models/url");
 const Group = require("../../models/group");
-const { transformUrl, transformGroup } = require('./merge');
+const { transformGroup } = require('./merge');
 
 module.exports = {
     createGroup: async args => {

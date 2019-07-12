@@ -1,6 +1,6 @@
 const Url = require("../../models/url");
 const Group = require("../../models/group");
-const { transformUrl, transformGroup } = require('./merge');
+const { transformUrl } = require('./merge');
 
 module.exports = {
     createUrl: async args => {
@@ -20,7 +20,6 @@ module.exports = {
     incUrlCounter: async args => {
         try {
             console.log(args.id)
-            // console.log(args.updateUrlInput)
             let url = await Url.findByIdAndUpdate({_id:args.id},{$inc: { visitCounter: 1 }},{new:true});
             return transformUrl(url)
         } catch (err) {

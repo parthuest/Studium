@@ -1,4 +1,3 @@
-// const DataLoader = require("dataloader");
 const Group = require("../../models/group");
 const Url = require("../../models/url");
 
@@ -47,15 +46,11 @@ const groups = async groupIds => {
     throw err;
   }
 };
-// =============================================================================================
 const transformUrl = url => {
     return {
         ...url._doc,
         id: url.id,
         parent: group.bind(this, url._doc.parent),
-        // createdCourses: courses.bind(this, url._doc.createdCourses),
-        // enrolledCourses: courses.bind(this, url._doc.enrolledCourses),
-        // wailistedCourses: courses.bind(this, url._doc.wailistedCourses),
     };
 };
 
@@ -64,8 +59,6 @@ const transformGroup = group => {
         ...group._doc,
         id: group.id,
         childUrls: urls.bind(this, group._doc.childUrls),
-        // enrolledStudents: users.bind(this, group._doc.enrolledStudents),
-        // waitlistedStudents: users.bind(this, group._doc.waitlistedStudents),
     };
 };
 
