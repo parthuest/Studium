@@ -1,4 +1,4 @@
-// const Url = require("../../models/url");
+// const Url = require("../../models/url");                     
 const Group = require("../../models/group");
 const { transformGroup } = require('./merge');
 
@@ -29,7 +29,7 @@ module.exports = {
             const res = await Group.findById(args.id);
             return transformGroup(res)
         } catch (err) {
-            throw err;
+            throw err;                                                                                                                                                                                                                                                
         }
     },
     addUrlInGroup: async args => {
